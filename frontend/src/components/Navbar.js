@@ -5,16 +5,7 @@ const Navbar = () => {
   const navigate = useNavigate()
   const goToUrl = (p = '') => {
     navigate(`/${p}`)
-    generateCustomURL(p)
   }
-  function generateCustomURL(p = '') {
-    const showU = `${p.length <= 0 ? '/codebuddy' : `/codebuddy/${p}`}`;
-    window.history.pushState({}, '', showU);
-  }
-
-  useEffect(() => {
-    generateCustomURL('')
-  }, [])
   return (
     <div className='nav' style={{ backgroundColor: "#3F51B5" }}>
       <span className="logo">CodeBuddy</span>
